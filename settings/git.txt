@@ -1,0 +1,61 @@
+Первоначальные настройки.  git config ­­--global user.name "Your Name"  git config ­­--global user.email "your_email@whatever.com"    git config ­­global core.autocrlf true  git config ­­global core.safecrlf true 
+
+Запуск репозитория  git init ­ совдаём новый  git clone [url || name] [new folder name] ­ копируем уже существующий
+
+git add .
+git status
+git commit -m "com1"	//"com2"		//"com3"
+
+git log --pretty=oneline	//vezi istoria comitelor
+
+git checkout 178d 	//primele 4 cifre treci in ramura afisata in log
+
+git checkout mastre	//treci inramura master
+
+git branch
+
+---------------------
+1. anuleaza git add .	// git reset [file]
+2. anuleaza git commit	// git revert HEAD --no-edit
+3. anuleaza schimbarile	salvate// git checkout a.html // git checkout .
+
+git reset . != git add .
+edit redactor != git checkout .
+git revert HEAD != git commit
+git reset --hard 178d	//sterge tot ce sa lucrat dupa schimbarile din 178d si se muta pe aceasta, nu se foloseste - e periculos
+---------------------
+creare de ramura:
+git branch nume_ramura
+
+trecere la ramura creata:
+git checkout nume_ramura
+
+sterge ramura:
+git branch vlad1 -d
+
+adaugare la proiectul master (fiind in master):
+git merge nume_ramura
+---------------------
+gitk - arata istoria lucrarilor
+---------------------
+distribuire priect(repositoriu):
+git remote add origin https://github.com/spinuvlad/git-test
+git push -u origin --all
+
+lucru doar in propria ramura:
+dupa git add/commit:
+git push --set-upstream origin nume_ramura
+
+--------------------
+git clone https://github.com/spinuvlad/git-test
+va avea acces doar la ramura "master"
+trebuie sa creeze propria ramura si apoi sa-i faca push
+
+git fetch		//arata toate ramurile, inclusiv cele create de alti programisti
+
+git branch --track ramura_programist origin/ramura_progrmaist
+dupa ce alegi ramura_programist
+git pull	//primim datele noi
+
+---------------------
+
